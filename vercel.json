@@ -1,0 +1,31 @@
+{
+  "buildCommand": "cd eazywed && npm install && npm run build",
+  "outputDirectory": "eazywed/dist",
+  "framework": "vite",
+  "devCommand": "cd eazywed && npm run dev",
+  "env": {
+    "MONGODB_URI": "@mongodb_uri",
+    "JWT_SECRET": "@jwt_secret",
+    "TWILIO_ACCOUNT_SID": "@twilio_account_sid",
+    "TWILIO_AUTH_TOKEN": "@twilio_auth_token",
+    "TWILIO_PHONE": "@twilio_phone",
+    "CLOUDINARY_NAME": "@cloudinary_name",
+    "CLOUDINARY_API_KEY": "@cloudinary_api_key",
+    "CLOUDINARY_API_SECRET": "@cloudinary_api_secret",
+    "VITE_API_URL": "@vite_api_url",
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "api/index.js": {
+      "runtime": "nodejs18.x",
+      "memory": 1024,
+      "maxDuration": 60
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.js"
+    }
+  ]
+}

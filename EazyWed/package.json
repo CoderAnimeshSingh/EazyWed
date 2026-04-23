@@ -1,0 +1,27 @@
+{
+  "name": "eazywed-fullstack",
+  "version": "1.0.0",
+  "description": "EazyWed - Wedding Planning Platform",
+  "main": "api/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd eazywed && npm run dev\"",
+    "install-all": "npm install && cd backend && npm install && cd ../eazywed && npm install",
+    "build": "cd eazywed && npm install && npm run build",
+    "start": "node api/index.js",
+    "backend:dev": "cd backend && npm run dev",
+    "frontend:dev": "cd eazywed && npm run dev",
+    "vercel-build": "cd eazywed && npm install && npm run build"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
